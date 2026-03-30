@@ -36,9 +36,9 @@
 
     .topbar { background: var(--text); height: 3px; width: 100%; }
 
-    /* ── SITE NAV ── */
-    .site-nav {
-      max-width: 800px;
+    /* ── NAV ── */
+    nav {
+      max-width: 900px;
       margin: 0 auto;
       padding: 28px 28px 0;
       display: flex;
@@ -85,57 +85,47 @@
     }
     .nav-cta:hover { background: var(--accent); }
 
-    /* ── CONTAINER ── */
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 28px 80px;
-    }
-
-    /* ── HEADER ── */
-    header {
-      padding: 52px 0 48px;
+    /* ── PAGE HEADER ── */
+    .page-header {
+      max-width: 900px; margin: 0 auto;
+      padding: 72px 28px 64px;
       border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: flex-start;
-      gap: 28px;
     }
 
-    .logo-wrap {
-      flex-shrink: 0;
-      width: 72px; height: 72px;
-      border-radius: 16px; overflow: hidden;
-      box-shadow: 0 4px 16px rgba(26,18,8,0.14);
-    }
-    .logo-wrap img { width: 100%; height: 100%; display: block; }
-
-    .header-text { flex: 1; }
-
-    .app-name {
-      font-family: var(--sans);
+    .page-eyebrow {
       font-size: 11px; font-weight: 500;
       letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: 6px;
+      color: var(--accent); margin-bottom: 20px;
+      opacity: 0; animation: fadeUp 0.5s ease 0.05s forwards;
     }
 
-    h1 {
+    .page-title {
       font-family: var(--serif);
-      font-size: clamp(2rem, 4.5vw, 3rem);
-      font-weight: 400; line-height: 1.15;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 400; line-height: 1.1;
       letter-spacing: -0.02em;
-      color: var(--text); margin-bottom: 14px;
+      max-width: 600px; margin-bottom: 20px;
+      opacity: 0; animation: fadeUp 0.5s ease 0.12s forwards;
     }
 
-    .meta { font-size: 13px; color: var(--muted); }
-    .meta strong { font-weight: 500; color: var(--text); }
+    .page-meta {
+      font-size: 13px; color: var(--muted);
+      opacity: 0; animation: fadeUp 0.5s ease 0.2s forwards;
+    }
+    .page-meta strong { font-weight: 500; color: var(--text); }
 
     /* ── TOC ── */
+    .toc-wrap {
+      max-width: 900px; margin: 0 auto;
+      padding: 40px 28px 0;
+    }
+
     nav.toc {
-      margin: 40px 0 0;
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 6px;
+      border-radius: 4px;
       padding: 24px 28px;
+      opacity: 0; animation: fadeUp 0.5s ease 0.25s forwards;
     }
 
     nav.toc h2 {
@@ -164,36 +154,33 @@
       content: counter(toc, decimal-leading-zero) ".";
       color: var(--accent);
       font-size: 11px; font-weight: 500;
-      margin-right: 4px;
+      margin-right: 5px;
     }
 
     nav.toc a:hover { color: var(--text); }
 
-    /* ── SECTIONS ── */
-    section {
-      margin-top: 52px;
-      padding-bottom: 52px;
+    /* ── CONTENT SECTIONS ── */
+    .policy-section {
+      max-width: 900px; margin: 0 auto;
+      padding: 52px 28px;
       border-bottom: 1px solid var(--border);
-      opacity: 0;
-      transform: translateY(12px);
+      opacity: 0; transform: translateY(12px);
       animation: fadeUp 0.45s ease forwards;
     }
 
-    section:last-of-type { border-bottom: none; }
-    section:nth-child(1)  { animation-delay: 0.05s; }
-    section:nth-child(2)  { animation-delay: 0.10s; }
-    section:nth-child(3)  { animation-delay: 0.15s; }
-    section:nth-child(4)  { animation-delay: 0.20s; }
-    section:nth-child(5)  { animation-delay: 0.25s; }
-    section:nth-child(6)  { animation-delay: 0.30s; }
-    section:nth-child(7)  { animation-delay: 0.35s; }
-    section:nth-child(8)  { animation-delay: 0.40s; }
-    section:nth-child(9)  { animation-delay: 0.45s; }
-    section:nth-child(10) { animation-delay: 0.50s; }
+    .policy-section:last-of-type { border-bottom: none; }
+    .policy-section:nth-child(1)  { animation-delay: 0.10s; }
+    .policy-section:nth-child(2)  { animation-delay: 0.15s; }
+    .policy-section:nth-child(3)  { animation-delay: 0.20s; }
+    .policy-section:nth-child(4)  { animation-delay: 0.25s; }
+    .policy-section:nth-child(5)  { animation-delay: 0.30s; }
+    .policy-section:nth-child(6)  { animation-delay: 0.35s; }
+    .policy-section:nth-child(7)  { animation-delay: 0.40s; }
+    .policy-section:nth-child(8)  { animation-delay: 0.45s; }
+    .policy-section:nth-child(9)  { animation-delay: 0.50s; }
+    .policy-section:nth-child(10) { animation-delay: 0.55s; }
 
-    @keyframes fadeUp { to { opacity: 1; transform: none; } }
-
-    h2 {
+    .policy-section h2 {
       font-family: var(--serif);
       font-size: 1.5rem; font-weight: 400;
       letter-spacing: -0.01em;
@@ -201,18 +188,18 @@
       display: flex; align-items: baseline; gap: 12px;
     }
 
-    h2 .num {
+    .policy-section h2 .num {
       font-family: var(--sans);
       font-size: 11px; font-weight: 500;
       color: var(--accent); letter-spacing: 0.1em;
       flex-shrink: 0;
     }
 
-    p { margin-bottom: 14px; font-size: 15px; }
-    p:last-child { margin-bottom: 0; }
-    ul, ol { padding-left: 20px; margin-bottom: 14px; }
-    li { font-size: 15px; margin-bottom: 6px; }
-    strong { font-weight: 500; }
+    .policy-section p { margin-bottom: 14px; font-size: 15px; }
+    .policy-section p:last-child { margin-bottom: 0; }
+    .policy-section ul, .policy-section ol { padding-left: 20px; margin-bottom: 14px; }
+    .policy-section li { font-size: 15px; margin-bottom: 6px; }
+    .policy-section strong { font-weight: 500; }
 
     /* ── TABLE ── */
     .data-table {
@@ -234,6 +221,7 @@
       padding: 10px 14px;
       border-bottom: 1px solid var(--border);
       vertical-align: top; color: var(--muted);
+      font-size: 14px;
     }
 
     .data-table tr:last-child td { border-bottom: none; }
@@ -251,7 +239,8 @@
 
     /* ── FOOTER ── */
     footer {
-      margin-top: 56px; padding: 28px 0 0;
+      max-width: 900px; margin: 0 auto;
+      padding: 28px 28px 40px;
       border-top: 1px solid var(--border);
       font-size: 13px; color: var(--muted);
       display: flex; justify-content: space-between;
@@ -269,10 +258,13 @@
     footer a { color: var(--accent); text-decoration: none; }
     footer a:hover { text-decoration: underline; }
 
-    @media (max-width: 520px) {
+    @keyframes fadeUp { to { opacity: 1; transform: none; } }
+
+    @media (max-width: 600px) {
       nav.toc ol { grid-template-columns: 1fr; }
-      header { flex-direction: column; gap: 16px; }
       .nav-links { display: none; }
+      .data-table { font-size: 13px; }
+      .data-table th, .data-table td { padding: 8px 10px; }
     }
 
     ::-webkit-scrollbar { width: 5px; }
@@ -284,7 +276,7 @@
 
 <div class="topbar"></div>
 
-<nav class="site-nav">
+<nav>
   <a href="/" class="nav-brand">
     <div class="nav-logo"><img src="SummitLogo.png" alt="Project Summit" /></div>
     <span class="nav-name">Project Summit</span>
@@ -297,23 +289,17 @@
   <a href="https://tally.so/r/vG4LNv" target="_blank" rel="noopener" class="nav-cta">Join Waitlist</a>
 </nav>
 
-<div class="container">
+<div class="page-header">
+  <p class="page-eyebrow">Legal &nbsp;·&nbsp; Project Summit</p>
+  <h1 class="page-title">Privacy Policy</h1>
+  <p class="page-meta">
+    Effective date: <strong>March 2026</strong>
+    &nbsp;·&nbsp;
+    Last updated: <strong>March 2026</strong>
+  </p>
+</div>
 
-  <header>
-    <div class="logo-wrap">
-      <img src="SummitLogo.png" alt="Project Summit" />
-    </div>
-    <div class="header-text">
-      <div class="app-name">Project Summit</div>
-      <h1>Privacy Policy</h1>
-      <p class="meta">
-        Effective date: <strong>March 2026</strong>
-        &nbsp;·&nbsp;
-        Last updated: <strong>March 2026</strong>
-      </p>
-    </div>
-  </header>
-
+<div class="toc-wrap">
   <nav class="toc">
     <h2>Contents</h2>
     <ol>
@@ -329,15 +315,18 @@
       <li><a href="#s10">Contact</a></li>
     </ol>
   </nav>
+</div>
 
-  <section id="s1">
+<div class="toc-wrap" style="padding-top: 0; padding-bottom: 40px;">
+
+  <div class="policy-section" id="s1">
     <h2><span class="num">01</span> Who we are</h2>
     <p><strong>Jordi Espanyol</strong> ("I", "me", or "Developer"), operating as an independent developer, is the controller of the personal data collected through the <strong>Project Summit</strong> iOS application ("the App").</p>
     <p>The App is an adaptive cycling training platform for iOS.</p>
     <p>Contact email: <strong>privacy@projectsummit.app</strong></p>
-  </section>
+  </div>
 
-  <section id="s2">
+  <div class="policy-section" id="s2">
     <h2><span class="num">02</span> Data we collect</h2>
     <p>The App collects data in the following categories:</p>
     <table class="data-table">
@@ -347,7 +336,7 @@
       <tbody>
         <tr><td><strong>Account &amp; identity</strong></td><td>Name, email address</td><td>Provided by you</td></tr>
         <tr><td><strong>Training &amp; performance</strong></td><td>FTP, power zones, TSS, CTL/ATL, training load metrics</td><td>Calculated by the App</td></tr>
-        <tr><td><strong>Activity data</strong></td><td>Rides, GPS routes, power output, heart rate, cadence, speed</td><td>Strava, Garmin Connect, Apple HealthKit</td></tr>
+        <tr><td><strong>Activity data</strong></td><td>Rides, GPS routes, power output, heart rate, cadence, speed</td><td>Strava, Apple HealthKit</td></tr>
         <tr><td><strong>Health &amp; recovery</strong></td><td>HRV (RMSSD), resting heart rate, sleep duration and quality</td><td>Apple HealthKit</td></tr>
         <tr><td><strong>Device &amp; usage</strong></td><td>iOS version, app version, anonymised crash logs</td><td>Device automatically</td></tr>
       </tbody>
@@ -355,23 +344,23 @@
     <div class="callout">
       <strong>Health data</strong> — HRV, heart rate, and sleep data are classified as sensitive health data. They are used exclusively for training adaptation calculations and are never shared with advertisers or sold to third parties.
     </div>
-  </section>
+  </div>
 
-  <section id="s3">
+  <div class="policy-section" id="s3">
     <h2><span class="num">03</span> How we use your data</h2>
     <p>Data is used solely to provide and improve the App's core functionality:</p>
     <ul>
       <li>Generate and adapt personalised cycling training plans</li>
       <li>Calculate training load, fatigue, and recovery readiness</li>
       <li>Estimate eFTP and power curve via the CP2 model</li>
-      <li>Push structured workouts to connected platforms (Garmin, Zwift, intervals.icu)</li>
+      <li>Push structured workouts to connected platforms via intervals.icu</li>
       <li>Detect skipped sessions and cascade plan adjustments</li>
       <li>Diagnose and fix application errors</li>
     </ul>
     <p>We do <strong>not</strong> use your data for advertising, profiling for commercial purposes, or sale to third parties.</p>
-  </section>
+  </div>
 
-  <section id="s4">
+  <div class="policy-section" id="s4">
     <h2><span class="num">04</span> Third-party integrations</h2>
     <p>Project Summit connects to the following external services. Each operates under its own privacy policy.</p>
     <table class="data-table">
@@ -380,23 +369,22 @@
       </thead>
       <tbody>
         <tr><td><strong>Strava</strong></td><td>Import completed activities</td><td>Read-only activity access via OAuth 2.0</td></tr>
-        <tr><td><strong>Garmin Connect</strong></td><td>Distribute workouts; import HRV &amp; health data</td><td>Workout files pushed; health metrics read</td></tr>
         <tr><td><strong>intervals.icu</strong></td><td>Workout distribution to Garmin, Zwift, MyWhoosh</td><td>Structured workout data</td></tr>
         <tr><td><strong>Apple HealthKit</strong></td><td>Read sleep, HRV, and activity data</td><td>No data written back; read-only queries</td></tr>
         <tr><td><strong>Supabase</strong></td><td>Backend database &amp; serverless functions</td><td>Training plan data stored securely in EU region</td></tr>
       </tbody>
     </table>
     <p>You may disconnect any integration at any time from the App's settings or directly from the third-party platform.</p>
-  </section>
+  </div>
 
-  <section id="s5">
+  <div class="policy-section" id="s5">
     <h2><span class="num">05</span> Data storage &amp; security</h2>
     <p>Your data is stored on Supabase infrastructure hosted in the <strong>EU (West Europe)</strong> region. Data in transit is encrypted using TLS 1.2+. Data at rest is encrypted at the storage layer by Supabase.</p>
     <p>Access to backend services is protected by row-level security policies. Only your authenticated user account can read or modify your personal training data.</p>
     <p>HealthKit data is queried locally on-device and transmitted to the backend only as a unique aggregated recovery metric. Raw biometric samples are never uploaded.</p>
-  </section>
+  </div>
 
-  <section id="s6">
+  <div class="policy-section" id="s6">
     <h2><span class="num">06</span> Data retention</h2>
     <p>Your data is retained for as long as your account is active. If you request account deletion:</p>
     <ul>
@@ -404,9 +392,9 @@
       <li>Anonymised, aggregated training statistics that cannot be re-linked to you may be retained for product improvement</li>
       <li>Backup copies are purged within <strong>90 days</strong> of account deletion</li>
     </ul>
-  </section>
+  </div>
 
-  <section id="s7">
+  <div class="policy-section" id="s7">
     <h2><span class="num">07</span> Your rights</h2>
     <p>Depending on your jurisdiction, you may have the following rights regarding your personal data:</p>
     <ul>
@@ -419,20 +407,20 @@
     </ul>
     <p>To exercise any of these rights, contact us at <strong>privacy@projectsummit.app</strong>. Requests will be responded to within 30 days.</p>
     <p>If you are located in the European Economic Area, you have the right to lodge a complaint with your local data protection authority (DPA).</p>
-  </section>
+  </div>
 
-  <section id="s8">
+  <div class="policy-section" id="s8">
     <h2><span class="num">08</span> Children's privacy</h2>
     <p>Project Summit is not directed at children under the age of 13 (or 16 in the EU). We do not knowingly collect personal data from children. If you believe a child has provided personal data to the App, please contact us and we will delete it promptly.</p>
-  </section>
+  </div>
 
-  <section id="s9">
+  <div class="policy-section" id="s9">
     <h2><span class="num">09</span> Changes to this policy</h2>
     <p>We may update this Privacy Policy from time to time. Material changes will be communicated via in-app notification at least 7 days before taking effect. The "Last updated" date at the top of this page reflects the most recent revision.</p>
     <p>Continued use of the App after the effective date constitutes acceptance of the updated policy.</p>
-  </section>
+  </div>
 
-  <section id="s10">
+  <div class="policy-section" id="s10">
     <h2><span class="num">10</span> Contact</h2>
     <p>For privacy-related questions, requests, or complaints:</p>
     <div class="callout">
@@ -440,17 +428,21 @@
       Project Summit — Privacy Enquiries<br/>
       Email: <strong>privacy@projectsummit.app</strong>
     </div>
-  </section>
-
-  <footer>
-    <span>
-      <span class="footer-logo"><img src="SummitLogo.png" alt="" /></span>
-      &copy; 2026 Project Summit &nbsp;&middot;&nbsp; <strong>Jordi Espanyol</strong>
-    </span>
-    <span>Hosted on <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a></span>
-  </footer>
+  </div>
 
 </div>
+
+<footer>
+  <span>
+    <span class="footer-logo"><img src="SummitLogo.png" alt="" /></span>
+    &copy; 2026 Project Summit &nbsp;·&nbsp; <strong>Jordi Espanyol</strong>
+  </span>
+  <span>
+    <a href="/roadmap.html">Roadmap</a>
+    &nbsp;·&nbsp;
+    <a href="mailto:team@projectsummit.app">team@projectsummit.app</a>
+  </span>
+</footer>
 
 </body>
 </html>
