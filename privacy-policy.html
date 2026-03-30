@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="icon" type="image/png" href="SummitLogo.png">  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy — Project Summit</title>
+  <link rel="icon" type="image/png" href="SummitLogo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -12,15 +12,15 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:        #FAF6F0;
-      --surface:   #FFFFFF;
-      --border:    #E5DDD4;
-      --accent:    #B8733A;
-      --accent2:   #8C4F1E;
-      --text:      #1A1208;
-      --muted:     #6B5B47;
-      --serif:     'Playfair Display', Georgia, serif;
-      --sans:      'Source Sans 3', system-ui, sans-serif;
+      --bg:      #FAF6F0;
+      --surface: #FFFFFF;
+      --border:  #E5DDD4;
+      --accent:  #B8733A;
+      --accent2: #8C4F1E;
+      --text:    #1A1208;
+      --muted:   #6B5B47;
+      --serif:   'Playfair Display', Georgia, serif;
+      --sans:    'Source Sans 3', system-ui, sans-serif;
     }
 
     html { scroll-behavior: smooth; }
@@ -36,12 +36,63 @@
 
     .topbar { background: var(--text); height: 3px; width: 100%; }
 
+    /* ── SITE NAV ── */
+    .site-nav {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 28px 28px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
+
+    .nav-logo {
+      width: 32px; height: 32px;
+      border-radius: 7px; overflow: hidden;
+      box-shadow: 0 2px 8px rgba(26,18,8,0.14);
+    }
+    .nav-logo img { width: 100%; display: block; }
+
+    .nav-name {
+      font-size: 11px; font-weight: 500;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex; align-items: center; gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 12px; font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--muted); text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+    .nav-links a.active { font-weight: 500; }
+
+    .nav-cta {
+      display: inline-block; padding: 9px 20px;
+      background: var(--text); color: var(--bg);
+      font-size: 12px; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; border-radius: 3px;
+      transition: background 0.2s; flex-shrink: 0;
+    }
+    .nav-cta:hover { background: var(--accent); }
+
+    /* ── CONTAINER ── */
     .container {
       max-width: 800px;
       margin: 0 auto;
       padding: 0 28px 80px;
     }
 
+    /* ── HEADER ── */
     header {
       padding: 52px 0 48px;
       border-bottom: 1px solid var(--border);
@@ -52,40 +103,33 @@
 
     .logo-wrap {
       flex-shrink: 0;
-      width: 72px;
-      height: 72px;
-      border-radius: 16px;
-      overflow: hidden;
+      width: 72px; height: 72px;
+      border-radius: 16px; overflow: hidden;
       box-shadow: 0 4px 16px rgba(26,18,8,0.14);
     }
-
     .logo-wrap img { width: 100%; height: 100%; display: block; }
 
     .header-text { flex: 1; }
 
     .app-name {
       font-family: var(--sans);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 6px;
+      font-size: 11px; font-weight: 500;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 6px;
     }
 
     h1 {
       font-family: var(--serif);
       font-size: clamp(2rem, 4.5vw, 3rem);
-      font-weight: 400;
-      line-height: 1.15;
+      font-weight: 400; line-height: 1.15;
       letter-spacing: -0.02em;
-      color: var(--text);
-      margin-bottom: 14px;
+      color: var(--text); margin-bottom: 14px;
     }
 
     .meta { font-size: 13px; color: var(--muted); }
     .meta strong { font-weight: 500; color: var(--text); }
 
+    /* ── TOC ── */
     nav.toc {
       margin: 40px 0 0;
       background: var(--surface);
@@ -96,12 +140,9 @@
 
     nav.toc h2 {
       font-family: var(--sans);
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 14px;
+      font-size: 10px; font-weight: 500;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 14px;
     }
 
     nav.toc ol {
@@ -112,30 +153,23 @@
       gap: 5px 32px;
     }
 
-    @media (max-width: 520px) {
-      nav.toc ol { grid-template-columns: 1fr; }
-      header { flex-direction: column; gap: 16px; }
-    }
-
     nav.toc li { counter-increment: toc; }
 
     nav.toc a {
-      font-size: 14px;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.15s;
+      font-size: 14px; color: var(--muted);
+      text-decoration: none; transition: color 0.15s;
     }
 
     nav.toc a::before {
-      content: counter(toc, decimal-leading-zero) ". ";
+      content: counter(toc, decimal-leading-zero) ".";
       color: var(--accent);
-      font-size: 11px;
-      font-weight: 500;
+      font-size: 11px; font-weight: 500;
       margin-right: 4px;
     }
 
     nav.toc a:hover { color: var(--text); }
 
+    /* ── SECTIONS ── */
     section {
       margin-top: 52px;
       padding-bottom: 52px;
@@ -161,22 +195,16 @@
 
     h2 {
       font-family: var(--serif);
-      font-size: 1.5rem;
-      font-weight: 400;
+      font-size: 1.5rem; font-weight: 400;
       letter-spacing: -0.01em;
-      margin-bottom: 20px;
-      color: var(--text);
-      display: flex;
-      align-items: baseline;
-      gap: 12px;
+      margin-bottom: 20px; color: var(--text);
+      display: flex; align-items: baseline; gap: 12px;
     }
 
     h2 .num {
       font-family: var(--sans);
-      font-size: 11px;
-      font-weight: 500;
-      color: var(--accent);
-      letter-spacing: 0.1em;
+      font-size: 11px; font-weight: 500;
+      color: var(--accent); letter-spacing: 0.1em;
       flex-shrink: 0;
     }
 
@@ -186,21 +214,17 @@
     li { font-size: 15px; margin-bottom: 6px; }
     strong { font-weight: 500; }
 
+    /* ── TABLE ── */
     .data-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-      font-size: 14px;
+      width: 100%; border-collapse: collapse;
+      margin: 20px 0; font-size: 14px;
     }
 
     .data-table th {
       text-align: left;
-      font-family: var(--sans);
-      font-weight: 500;
-      font-size: 10px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent2);
+      font-family: var(--sans); font-weight: 500;
+      font-size: 10px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--accent2);
       padding: 10px 14px;
       border-bottom: 1.5px solid var(--border);
       background: var(--surface);
@@ -209,53 +233,47 @@
     .data-table td {
       padding: 10px 14px;
       border-bottom: 1px solid var(--border);
-      vertical-align: top;
-      color: var(--muted);
+      vertical-align: top; color: var(--muted);
     }
 
     .data-table tr:last-child td { border-bottom: none; }
     .data-table tr:hover td { background: rgba(184,115,58,0.04); color: var(--text); }
 
+    /* ── CALLOUT ── */
     .callout {
       background: var(--surface);
       border-left: 3px solid var(--accent);
       border-radius: 0 4px 4px 0;
-      padding: 16px 20px;
-      margin: 20px 0;
-      font-size: 14px;
-      line-height: 1.7;
-      color: var(--muted);
+      padding: 16px 20px; margin: 20px 0;
+      font-size: 14px; line-height: 1.7; color: var(--muted);
     }
-
     .callout strong { color: var(--accent2); }
 
+    /* ── FOOTER ── */
     footer {
-      margin-top: 56px;
-      padding: 28px 0 0;
+      margin-top: 56px; padding: 28px 0 0;
       border-top: 1px solid var(--border);
-      font-size: 13px;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 8px;
-      align-items: center;
+      font-size: 13px; color: var(--muted);
+      display: flex; justify-content: space-between;
+      flex-wrap: wrap; gap: 8px; align-items: center;
     }
 
     .footer-logo {
-      width: 24px; height: 24px;
-      border-radius: 5px;
-      overflow: hidden;
-      display: inline-block;
-      vertical-align: middle;
-      margin-right: 7px;
+      width: 24px; height: 24px; border-radius: 5px;
+      overflow: hidden; display: inline-block;
+      vertical-align: middle; margin-right: 7px;
       box-shadow: 0 1px 4px rgba(0,0,0,0.10);
       position: relative; top: -1px;
     }
-
     .footer-logo img { width: 100%; display: block; }
     footer a { color: var(--accent); text-decoration: none; }
     footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 520px) {
+      nav.toc ol { grid-template-columns: 1fr; }
+      header { flex-direction: column; gap: 16px; }
+      .nav-links { display: none; }
+    }
 
     ::-webkit-scrollbar { width: 5px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
@@ -266,11 +284,24 @@
 
 <div class="topbar"></div>
 
+<nav class="site-nav">
+  <a href="/" class="nav-brand">
+    <div class="nav-logo"><img src="SummitLogo.png" alt="Project Summit" /></div>
+    <span class="nav-name">Project Summit</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/roadmap.html">Roadmap</a></li>
+    <li><a href="/privacy-policy.html" class="active">Privacy Policy</a></li>
+  </ul>
+  <a href="https://tally.so/r/vG4LNv" target="_blank" rel="noopener" class="nav-cta">Join Waitlist</a>
+</nav>
+
 <div class="container">
 
   <header>
     <div class="logo-wrap">
-      <img id="header-icon" src="SummitLogo.png" alt="Project Summit" />
+      <img src="SummitLogo.png" alt="Project Summit" />
     </div>
     <div class="header-text">
       <div class="app-name">Project Summit</div>
@@ -301,7 +332,8 @@
 
   <section id="s1">
     <h2><span class="num">01</span> Who we are</h2>
-    <p><strong>Jordi Espanyol</strong> ("I", "me", or "Developer"), operating as an independent developer, is the controller of the personal data collected through the <strong>Project Summit</strong> iOS application ("the App"). The App is an adaptive cycling training platform for iOS.</p>
+    <p><strong>Jordi Espanyol</strong> ("I", "me", or "Developer"), operating as an independent developer, is the controller of the personal data collected through the <strong>Project Summit</strong> iOS application ("the App").</p>
+    <p>The App is an adaptive cycling training platform for iOS.</p>
     <p>Contact email: <strong>privacy@projectsummit.app</strong></p>
   </section>
 
@@ -412,12 +444,13 @@
 
   <footer>
     <span>
-      <span class="footer-logo"><img id="footer-icon" src="SummitLogo.png" alt="" /></span>
+      <span class="footer-logo"><img src="SummitLogo.png" alt="" /></span>
       &copy; 2026 Project Summit &nbsp;&middot;&nbsp; <strong>Jordi Espanyol</strong>
     </span>
     <span>Hosted on <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a></span>
   </footer>
 
 </div>
+
 </body>
 </html>
