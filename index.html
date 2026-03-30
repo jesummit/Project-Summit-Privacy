@@ -71,7 +71,20 @@
       transition: background 0.2s;
     }
     .nav-cta:hover { background: var(--accent); }
+    .nav-links {
+      display: flex; align-items: center; gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+       font-size: 12px; font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--muted); text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+    .nav-links a.active { font-weight: 500; }
 
+@media (max-width: 600px) { .nav-links { display: none; } }
     /* HERO */
     .hero {
       max-width: 900px; margin: 0 auto;
@@ -285,9 +298,14 @@
 
 <nav>
   <a href="/" class="nav-brand">
-    <div class="nav-logo"><img id="nav-icon" src="SummitLogo.png" alt="Project Summit" /></div>
+    <div class="nav-logo"><img src="SummitLogo.png" alt="Project Summit" /></div>
     <span class="nav-name">Project Summit</span>
   </a>
+  <ul class="nav-links">
+    <li><a href="/" class="active">Home</a></li>
+    <li><a href="/roadmap.html">Roadmap</a></li>
+    <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+  </ul>
   <a href="https://tally.so/r/vG4LNv" target="_blank" rel="noopener" class="nav-cta">Join Waitlist</a>
 </nav>
 
