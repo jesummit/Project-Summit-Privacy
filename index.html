@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="SummitLogo.png">
+  <link rel="icon" type="image/png" href="SummitLogo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Project Summit — Smarter Cycling Training</title>
   <meta name="description" content="Built for cyclists who take training seriously. Smarter training. Better fueling. Real results." />
@@ -36,7 +36,7 @@
 
     .topbar { background: var(--text); height: 3px; width: 100%; }
 
-    /* NAV */
+    /* ── NAV ── */
     nav {
       max-width: 900px;
       margin: 0 auto;
@@ -44,9 +44,10 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 20px;
     }
 
-    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
 
     .nav-logo {
       width: 32px; height: 32px;
@@ -62,21 +63,12 @@
       color: var(--accent);
     }
 
-    .nav-cta {
-      display: inline-block; padding: 9px 20px;
-      background: var(--text); color: var(--bg);
-      font-size: 12px; font-weight: 500;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      text-decoration: none; border-radius: 3px;
-      transition: background 0.2s;
-    }
-    .nav-cta:hover { background: var(--accent); }
     .nav-links {
       display: flex; align-items: center; gap: 28px;
       list-style: none;
     }
     .nav-links a {
-       font-size: 12px; font-weight: 400;
+      font-size: 12px; font-weight: 400;
       letter-spacing: 0.08em;
       color: var(--muted); text-decoration: none;
       transition: color 0.15s;
@@ -84,8 +76,17 @@
     .nav-links a:hover, .nav-links a.active { color: var(--text); }
     .nav-links a.active { font-weight: 500; }
 
-@media (max-width: 600px) { .nav-links { display: none; } }
-    /* HERO */
+    .nav-cta {
+      display: inline-block; padding: 9px 20px;
+      background: var(--text); color: var(--bg);
+      font-size: 12px; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; border-radius: 3px;
+      transition: background 0.2s; flex-shrink: 0;
+    }
+    .nav-cta:hover { background: var(--accent); }
+
+    /* ── HERO ── */
     .hero {
       max-width: 900px; margin: 0 auto;
       padding: 72px 28px 80px;
@@ -133,7 +134,7 @@
     .hero-note { font-size: 13px; color: var(--muted); }
     .hero-note strong { color: var(--accent); font-weight: 500; }
 
-    /* FEATURES */
+    /* ── FEATURES ── */
     .features {
       max-width: 900px; margin: 0 auto;
       padding: 80px 28px;
@@ -175,7 +176,97 @@
 
     .feature-desc { font-size: 14px; color: var(--muted); line-height: 1.75; }
 
-    /* INTEGRATIONS */
+    .badge-beta {
+      display: inline-block;
+      font-size: 9px; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent); border: 1px solid var(--accent);
+      border-radius: 2px; padding: 1px 6px;
+      margin-left: 8px; vertical-align: middle;
+      position: relative; top: -2px;
+    }
+
+    /* ── NUTRITION ── */
+    .nutrition {
+      max-width: 900px; margin: 0 auto;
+      padding: 80px 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nutrition-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .nutrition-block {
+      background: var(--bg); padding: 40px 36px;
+      transition: background 0.2s;
+    }
+    .nutrition-block:hover { background: var(--surface); }
+
+    .nutrition-icon { font-size: 28px; margin-bottom: 16px; display: block; }
+
+    .nutrition-label {
+      font-size: 10px; font-weight: 500;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 10px;
+    }
+
+    .nutrition-title {
+      font-family: var(--serif);
+      font-size: 1.3rem; font-weight: 400;
+      line-height: 1.25; letter-spacing: -0.01em;
+      margin-bottom: 12px;
+    }
+
+    .nutrition-desc { font-size: 14px; color: var(--muted); line-height: 1.75; }
+
+    /* ── WHO FOR ── */
+    .who-for {
+      max-width: 900px; margin: 0 auto;
+      padding: 80px 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .who-for-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 48px; align-items: start;
+    }
+
+    .who-for-title {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 400; line-height: 1.2;
+      letter-spacing: -0.02em; margin-bottom: 20px;
+    }
+    .who-for-title em { font-style: italic; color: var(--accent); }
+
+    .who-for-list { list-style: none; padding: 0; }
+    .who-for-list li {
+      font-size: 14px; color: var(--muted);
+      padding: 12px 0; border-bottom: 1px solid var(--border);
+      display: flex; align-items: flex-start; gap: 12px;
+      line-height: 1.6;
+    }
+    .who-for-list li:last-child { border-bottom: none; }
+    .who-for-list li::before {
+      content: '✓';
+      color: var(--accent); font-weight: 500;
+      font-size: 13px; flex-shrink: 0; margin-top: 2px;
+    }
+
+    .who-for-not {
+      margin-top: 24px;
+      padding: 18px 22px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 13px; color: var(--muted); line-height: 1.7;
+    }
+    .who-for-not strong { color: var(--text); font-weight: 500; }
+
+    /* ── INTEGRATIONS ── */
     .integrations {
       max-width: 900px; margin: 0 auto;
       padding: 80px 28px;
@@ -222,7 +313,7 @@
       color: var(--accent); margin-bottom: 6px;
     }
 
-    /* CTA */
+    /* ── CTA ── */
     .cta-section {
       max-width: 900px; margin: 0 auto;
       padding: 80px 28px;
@@ -256,7 +347,7 @@
       letter-spacing: 0.1em; text-transform: uppercase;
     }
 
-    /* FOOTER */
+    /* ── FOOTER ── */
     footer {
       max-width: 900px; margin: 0 auto;
       padding: 28px 28px 40px;
@@ -281,10 +372,13 @@
 
     @media (max-width: 600px) {
       .features-grid { grid-template-columns: 1fr; }
+      .nutrition-inner { grid-template-columns: 1fr; }
+      .who-for-inner { grid-template-columns: 1fr; }
       .cta-section { flex-direction: column; align-items: flex-start; }
       .cta-aside { text-align: left; }
       .integrations-intro { flex-direction: column; }
       .integrations-sub { text-align: left; }
+      .nav-links { display: none; }
     }
 
     ::-webkit-scrollbar { width: 5px; }
@@ -312,7 +406,7 @@
 <section class="hero">
   <p class="hero-eyebrow">iOS App &nbsp;·&nbsp; Coming Soon</p>
   <h1 class="hero-headline">Built for cyclists who take training <em>seriously.</em></h1>
-  <p class="hero-sub">Smarter training. Better fueling. Real results. An adaptive platform that learns from your body — not a rigid plan.</p>
+  <p class="hero-sub">An adaptive iOS training platform that tracks your load, reads your recovery, and fuels your performance — built around your body, not a generic plan.</p>
   <div class="hero-actions">
     <a href="https://tally.so/r/vG4LNv" target="_blank" rel="noopener" class="btn-primary">Join the Waitlist</a>
     <span class="hero-note"><strong>+30 cyclists</strong> already on the list</span>
@@ -320,27 +414,78 @@
 </section>
 
 <section class="features">
-  <p class="section-label">What Project Summit does</p>
+  <p class="section-label">What's in v1.0</p>
   <div class="features-grid">
     <div class="feature-card">
       <div class="feature-num">01</div>
-      <h2 class="feature-title">Adaptive Training Load</h2>
-      <p class="feature-desc">Tracks CTL, ATL, and TSS in real time. Detects skipped sessions and automatically cascades plan adjustments so you never follow a stale schedule.</p>
+      <h2 class="feature-title">CTL / ATL / TSB — Real Time</h2>
+      <p class="feature-desc">Training load, fatigue, and form tracked live across every session. The numbers that serious cyclists actually use, always current.</p>
     </div>
     <div class="feature-card">
       <div class="feature-num">02</div>
-      <h2 class="feature-title">FTP &amp; Power Curve Intelligence</h2>
-      <p class="feature-desc">Continuously estimates your eFTP and power zones using the CP2 model. No manual tests needed — your training data speaks for itself.</p>
+      <h2 class="feature-title">HRV-Driven Recovery</h2>
+      <p class="feature-desc">Reads your HRV, resting heart rate, and sleep from Apple Health. Intensity adjusts before you even open the app.</p>
     </div>
     <div class="feature-card">
       <div class="feature-num">03</div>
-      <h2 class="feature-title">HRV-Driven Recovery</h2>
-      <p class="feature-desc">Reads your HRV, resting heart rate, and sleep quality from Apple Health. Adjusts daily intensity before you even open the app.</p>
+      <h2 class="feature-title">eFTP &amp; Power Curve</h2>
+      <p class="feature-desc">Continuous estimation via the CP2 model. No manual tests needed — your ride history does the work.</p>
     </div>
     <div class="feature-card">
       <div class="feature-num">04</div>
-      <h2 class="feature-title">Push Workouts Everywhere</h2>
-      <p class="feature-desc">Structured workouts flow directly to Garmin, Zwift, and MyWhoosh via intervals.icu — one tap, ready to ride.</p>
+      <h2 class="feature-title">Advanced Periodisation</h2>
+      <p class="feature-desc">Base, build, peak, and taper blocks structured around your target events — with full adaptation to your real-life availability.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">05</div>
+      <h2 class="feature-title">Plan Cascading</h2>
+      <p class="feature-desc">Skipped sessions, illness, injury, or a change in schedule — the plan reshapes itself around you. No more stale training blocks.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">06</div>
+      <h2 class="feature-title">Push Workouts via intervals.icu</h2>
+      <p class="feature-desc">Structured sessions distributed to Garmin, Zwift, and MyWhoosh in one tap. Rides imported automatically from Strava.</p>
+    </div>
+  </div>
+</section>
+
+<section class="nutrition">
+  <p class="section-label">Built-in nutrition</p>
+  <div class="nutrition-inner">
+    <div class="nutrition-block">
+      <span class="nutrition-icon">🍽️</span>
+      <p class="nutrition-label">Race Day</p>
+      <h2 class="nutrition-title">Race Day Nutrition Planner</h2>
+      <p class="nutrition-desc">Carbohydrate, fluid, and electrolyte targets built around your race duration, intensity, and bodyweight. Know exactly what to eat, and when, before the gun goes off.</p>
+    </div>
+    <div class="nutrition-block">
+      <span class="nutrition-icon">🥗</span>
+      <p class="nutrition-label">Daily <span class="badge-beta">Beta</span></p>
+      <h2 class="nutrition-title">Daily Nutrition Planning</h2>
+      <p class="nutrition-desc">Day-by-day fueling targets matched to your training load. High-carb on hard days, recovery-focused on easy ones — automatically adjusted as your plan evolves.</p>
+    </div>
+  </div>
+</section>
+
+<section class="who-for">
+  <p class="section-label">Is this for you?</p>
+  <div class="who-for-inner">
+    <div>
+      <h2 class="who-for-title">Made for the <em>serious amateur.</em></h2>
+      <p style="font-size:14px;color:var(--muted);line-height:1.75;">Project Summit is opinionated. It's built for a specific type of cyclist — one who wants real training science, not a watered-down experience.</p>
+    </div>
+    <div>
+      <ul class="who-for-list">
+        <li>You train with a power meter and take your FTP seriously</li>
+        <li>You already use Strava and want your data to actually work for you</li>
+        <li>You've outgrown generic plans and want something that adapts to your life</li>
+        <li>You care about recovery as much as volume</li>
+        <li>You have a target event and want to peak for it</li>
+        <li>You want nutrition integrated into your training, not bolted on</li>
+      </ul>
+      <div class="who-for-not">
+        <strong>Not quite there yet?</strong> Project Summit assumes you're already training consistently and tracking power. If you're just starting out, a simpler app may be a better first step.
+      </div>
     </div>
   </div>
 </section>
@@ -352,10 +497,10 @@
   </div>
   <div class="integrations-list">
     <div class="integration-item"><span>Import</span>Strava</div>
-    <div class="integration-item"><span>Sync</span>Garmin Connect</div>
     <div class="integration-item"><span>Distribute</span>intervals.icu</div>
     <div class="integration-item"><span>Health</span>Apple HealthKit</div>
     <div class="integration-item"><span>Train</span>Zwift</div>
+    <div class="integration-item"><span>Train</span>MyWhoosh</div>
   </div>
 </section>
 
@@ -373,10 +518,12 @@
 
 <footer>
   <span>
-    <span class="footer-logo"><img id="footer-icon" src="SummitLogo.png" alt="" /></span>
+    <span class="footer-logo"><img src="SummitLogo.png" alt="" /></span>
     &copy; 2026 Project Summit &nbsp;·&nbsp; <strong>Jordi Espanyol</strong>
   </span>
   <span>
+    <a href="/roadmap.html">Roadmap</a>
+    &nbsp;·&nbsp;
     <a href="/privacy-policy.html">Privacy Policy</a>
     &nbsp;·&nbsp;
     <a href="mailto:team@projectsummit.app">team@projectsummit.app</a>
@@ -386,7 +533,7 @@
 <script>
   // Scroll-triggered feature cards
   var cards = document.querySelectorAll('.feature-card');
-  var delays = [0, 0.1, 0.2, 0.3];
+  var delays = [0, 0.1, 0.2, 0.3, 0.4, 0.5];
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting) {
