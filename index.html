@@ -32,7 +32,8 @@
     html { scroll-behavior: smooth; }
 
     body {
-      background: var(--bg);
+      background-color: var(--bg);
+      background-image: radial-gradient(ellipse 55% 45% at 92% -5%, rgba(214,106,45,0.28) 0%, transparent 100%);
       color: var(--ink);
       font-family: var(--font-ui);
       font-weight: 400;
@@ -63,11 +64,13 @@
     .nav-logo img { width: 100%; display: block; }
 
     .nav-name {
-      font-family: var(--font-mono);
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--accent);
+      font-family: var(--font-display);
+      font-size: 18px; font-weight: 900;
+      letter-spacing: -0.04em;
+      color: var(--ink);
+      text-decoration: none;
     }
+    .nav-dot { color: var(--accent); }
 
     .nav-links {
       display: flex; align-items: center; gap: 28px;
@@ -101,19 +104,6 @@
       max-width: 900px; margin: 0 auto;
       padding: 80px 48px 88px;
       border-bottom: 1px solid var(--ink-hair);
-      position: relative; overflow: hidden;
-    }
-
-    /* Brand wash — ember radial top-right */
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -60px; right: -80px;
-      width: 480px; height: 480px;
-      background: radial-gradient(circle, rgba(214,106,45,0.70) 0%, rgba(214,106,45,0) 70%);
-      filter: blur(80px);
-      opacity: 0.32;
-      pointer-events: none;
     }
 
     .hero-eyebrow {
@@ -474,7 +464,7 @@
 <nav>
   <a href="/" class="nav-brand">
     <div class="nav-logo"><img src="SummitLogo.png" alt="Project Summit" /></div>
-    <span class="nav-name">Project Summit</span>
+    <span class="nav-name">Summit<span class="nav-dot">.</span></span>
   </a>
   <ul class="nav-links">
     <li><a href="/" class="active">Home</a></li>
